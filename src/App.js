@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>People's Welcomer</h1>
+      <h1>Your Emoji's</h1>
       <input
         onChange={emojiMeaningHandler}
         placeholder="input a emoji"
