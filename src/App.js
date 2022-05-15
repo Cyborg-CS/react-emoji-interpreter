@@ -15,8 +15,8 @@ export default function App() {
 
   const [emojiMeaning, setEmojiMeaning] = useState("");
 
-  function emojiMeaningHandler() {
-    var userInput = event.target.value;
+  function emojiMeaningHandler(e) {
+    var userInput = e.target.value;
     var meaning = emojiList[userInput];
     setEmojiMeaning(meaning);
   }
@@ -29,8 +29,15 @@ export default function App() {
   return (
     <div className="App">
       <h1>People's Welcomer</h1>
-      <input onChange={emojiMeaningHandler} placeholder="input a emoji" />
-      <div> {emojiMeaning} </div>
+      <input
+        onChange={emojiMeaningHandler}
+        placeholder="input a emoji"
+        style={{ width: "500px", minHeight: "2rem" }}
+      />
+      <div style={{ fontWeight: "bolder", height: "1rem", paddingTop: "1rem" }}>
+        {" "}
+        {emojiMeaning}{" "}
+      </div>
       <h3>Emojis we know</h3>
       <div>
         {emojiDictionary.map(function (emoji) {
