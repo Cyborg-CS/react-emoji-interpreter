@@ -1,2 +1,3 @@
 # react-emoji-interpreter
-Created with CodeSandbox
+
+Beginner level react app can be used to know the meaning of specified emojis, made during levelZero of neoG.camp ;)
