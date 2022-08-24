@@ -8,7 +8,13 @@ export default function App() {
     "💵": "Money",
     "🤡": "Clown Face",
     "⚡": "Thunder Bolt",
-    "😁": "Smiling Face"
+    "😁": "Smiling Face",
+    "✈️": "Air Plane",
+    "🌸": "Cherry Blossom",
+    "😎": "Savage",
+    "👊": "Fist",
+    "💣": "Bomb !",
+    "😓": "Downcast face"
   };
 
   var emojiDictionary = Object.keys(emojiList);
@@ -28,30 +34,36 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Your Emoji's</h1>
-      <input
-        onChange={emojiMeaningHandler}
-        placeholder="input a emoji"
-        style={{ width: "500px", minHeight: "2rem" }}
-      />
-      <div style={{ fontWeight: "bolder", height: "1rem", paddingTop: "1rem" }}>
-        {" "}
-        {emojiMeaning}{" "}
-      </div>
-      <h3>Emojis we know</h3>
-      <div>
-        {emojiDictionary.map(function (emoji) {
-          return (
-            <span
-              key={emoji}
-              style={{ fontSize: "2rem", padding: "o.5rem", cursor: "pointer" }}
-              onClick={() => emojiClickHandler(emoji)}
-            >
-              {emoji}
-            </span>
-          );
-        })}
-      </div>
+      <main style={{ minWidth: "50vw", minHeight: "60%" }}>
+        <h1>Your Emoji's</h1>
+        <input
+          onChange={emojiMeaningHandler}
+          placeholder="input a emoji"
+          style={{ width: "50vw", minHeight: "2rem", textAlign: "center" }}
+        />
+        <h3 style={{ fontWeight: "bolder", height: "1rem", margin: "1rem" }}>
+          {" "}
+          {emojiMeaning}{" "}
+        </h3>
+        <h4>Emojis we know</h4>
+        <div>
+          {emojiDictionary.map(function (emoji) {
+            return (
+              <span
+                key={emoji}
+                style={{
+                  fontSize: "2rem",
+                  paddingLeft: "o.5rem",
+                  cursor: "pointer"
+                }}
+                onClick={() => emojiClickHandler(emoji)}
+              >
+                {emoji}
+              </span>
+            );
+          })}
+        </div>
+      </main>
     </div>
   );
 }
