@@ -23,8 +23,12 @@ export default function App() {
 
   function emojiMeaningHandler(e) {
     var userInput = e.target.value;
-    var meaning = emojiList[userInput];
-    setEmojiMeaning(meaning);
+    if (emojiDictionary.includes(userInput)) {
+      var meaning = emojiList[userInput];
+      setEmojiMeaning(meaning);
+    } else {
+      setEmojiMeaning("We don't have this emoji in our database yet :(");
+    }
   }
 
   function emojiClickHandler(emoji) {
@@ -41,7 +45,13 @@ export default function App() {
           placeholder="input a emoji"
           style={{ width: "50vw", minHeight: "2rem", textAlign: "center" }}
         />
-        <h3 style={{ fontWeight: "bolder", height: "1rem", margin: "1rem" }}>
+        <h3
+          style={{
+            fontWeight: "bolder",
+            height: "1rem",
+            margin: "1rem"
+          }}
+        >
           {" "}
           {emojiMeaning}{" "}
         </h3>
